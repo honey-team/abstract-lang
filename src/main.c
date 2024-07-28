@@ -1,5 +1,5 @@
 #include <core/config.h>
-#include <core/lexer.h>
+#include <core/lexer/tokenizer.h>
 #include <utils/includes.h>
 
 
@@ -17,17 +17,17 @@ int checkArgumentsCount(int argc) {
 }
 
 int main(int argc, char** argv) {
-    // if (argc == 1) 
-    //     return printVersion();
-// 
-    // if (checkArgumentsCount(argc))
-    //     return EXIT_FAILURE;
+     if (argc == 1)
+         return printVersion();
 
-    char* path = "some.abstr";
-    char* src = extractTextFromFile(path);
+     if (checkArgumentsCount(argc))
+         return EXIT_FAILURE;
 
-    if (src != NULL)
-        printf_s("\"%s\"\n", src);
+     FILE* file;
+     if (fopen_s(&file, argv[1], "rb"))
+         return EXIT_FAILURE;
+
+    printf_s("%s\n", getTokensFromFile(file));
 
     return EXIT_SUCCESS;
 }

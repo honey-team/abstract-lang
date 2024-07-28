@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.1)
 project(abstract)
 
-set(ABSTR_SRC src/main.c src/abstract/core/lexer.c)
+set(ABSTR_SRC   src/main.c
+                src/abstract/core/lexer/state.c
+                src/abstract/core/lexer/tokenizer.c
+)
 
 set(CMAKE_C_STANDARD 11)
 
