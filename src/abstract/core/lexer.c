@@ -1,8 +1,8 @@
 #include <utils/includes.h>
 #include "lexer.h"
-#include "config.h"
 
 
+// Will return pointer to the extension part of the <path> or NULL, if it absent
 static const char* _getExtension(const char* const path) {
     const char* d = strchr(path, '.');
 
