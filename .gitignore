@@ -31,8 +31,21 @@
 *.out
 *.app
 
-# JetBrains
-.idea
+# IDE
+.idea/
+.vscode/
+.vs/
+
+# MSVC extensions
+*.ilk
+*.pdb
+
+# build folders
+build
+cmake-build-*/
+out/
 
 # Tests
 run.bat
+venv/
+__pacache__
